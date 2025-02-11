@@ -14,19 +14,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Gérer les fichiers JS et JSX
+        test: /\.(js|jsx)$/, 
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'], // Ajouter @babel/preset-react
+            presets: ['@babel/preset-env', '@babel/preset-react'], 
           },
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // Permet d'importer sans préciser .js ou .jsx
+    extensions: ['.js', '.jsx'], 
   },
   plugins: [
     new ModuleFederationPlugin({

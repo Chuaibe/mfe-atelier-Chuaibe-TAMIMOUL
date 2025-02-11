@@ -13,19 +13,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Assurez-vous que cette règle prend en compte les fichiers .jsx
+        test: /\.(js|jsx)$/, 
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'], // Les presets pour gérer les dernières versions de JS et React
+            presets: ['@babel/preset-env', '@babel/preset-react'], 
           },
         },
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // Ajoute .jsx pour que Webpack puisse les résoudre
+    extensions: ['.js', '.jsx'], 
   },
   plugins: [
     new ModuleFederationPlugin({
