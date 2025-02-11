@@ -10,6 +10,23 @@ module.exports = {
   output: {
     publicPath: 'http://localhost:3000/',
   },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/, // Assurez-vous que cette règle prend en compte les fichiers .jsx
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'], // Les presets pour gérer les dernières versions de JS et React
+          },
+        },
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'], // Ajoute .jsx pour que Webpack puisse les résoudre
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: 'shell',
